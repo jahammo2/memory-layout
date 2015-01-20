@@ -1,0 +1,109 @@
+/*************************************************************
+*****BODY, RESET, AND GENERAL CSS*********
+*************************************************************/
+
+.wrapper {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+
+.wrapper-homepage {
+	background: #3B8B9E;
+	min-width: 400px;
+	height: 400px;
+	top: 20%;
+	left: 30%;
+	position: absolute;
+	margin-bottom: 15em;
+	-webkit-animation: up-down 2s ease-in infinite;
+}
+
+@-webkit-keyframes up-down {
+	50% {-webkit-transform: rotate(-.7deg) translateY(-.5em);}
+}
+
+.bottom {
+	display: -webkit-flex;
+	-webkit-flex-direction: column;
+	-webkit-align-content: center;
+	-webkit-flex-wrap: wrap;
+}
+
+h1 {
+	font-size: 2.3em;
+	margin: .5em 0 0 2.6em;
+}
+
+/*************************************************************
+***** BUTTONS *********
+*************************************************************/
+
+.hard,
+.easy {
+	border-top:240px solid white;
+	border-left:20px solid transparent;
+	border-right:20px solid transparent;
+	padding:0 8px 0 0;
+	height:0;
+	top: -35px;
+	left:25px;
+	width:40px;
+	position: relative;
+	z-index: 1;
+	display: block;
+}
+
+.hard:before,
+.easy:before {
+    border-top:230px solid #3B8B9E;
+    border-left:17px solid transparent;
+    border-right:17px solid transparent;
+    padding:0 8px 0 0;
+    height:0;
+    width:30px;
+    position: absolute;
+    top: -234px;
+    left: -12px;
+    content: "";
+    z-index: .5;
+}
+
+.hard {
+	-webkit-transform: rotate(90deg);
+    margin: -1em 0 0 11.8em;
+}
+
+.easy {
+	-webkit-transform: rotate(-90deg);
+ 	margin: -9em 0 0 4em;
+}
+
+.hard-heading,
+.easy-heading {
+	position: absolute;
+	left: .3em;
+}
+
+.hard-heading {
+	-webkit-transform: rotate(-90deg);
+	top: -4em;
+}
+
+.easy-heading {
+	-webkit-transform: rotate(90deg);
+	top: -4.4em;
+}
+
+input {
+	opacity: 0;
+}
+
+/*************************************************************
+***** HEADING *********
+*************************************************************/
+
+/******************** Media screens to resolve font issue *********************************/
+
+
+COMMENT	
