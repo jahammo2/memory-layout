@@ -262,7 +262,7 @@ main {
 
 /*************************************************************
 ***** HOMEPAGE *********
-*************************************************************/
+
 
 /*.wrapper {
 	position: absolute;
@@ -373,7 +373,7 @@ main {
 	height: 100%;
 	-webkit-transform-style: preserve-3d;
     -webkit-perspective: 1000;
-	/*visibility: hidden;*/
+	visibility: hidden;
 }
 
 .you-win-input {
@@ -384,10 +384,6 @@ main {
 	-webkit-animation: bg-color 10s infinite;
 	background: #4f9652;;
 }
-/*
-.you-win-input:checked ~ .after-div .you-win {
-	visibility: visible;
-}*/
 
 .you-win-input:checked ~ .after-div main {
 	display: none;
@@ -409,6 +405,7 @@ main {
 .you-win-input:checked ~ .after-div .you-win-heading {
 	-webkit-animation: pop-out 1.5s 1;
     -webkit-transform-style: preserve-3d;
+	visibility: visible;
 }
 
 @-webkit-keyframes pop-out {
@@ -426,48 +423,3 @@ main {
 	visibility: hidden;
 	-webkit-transition-delay: 1.5s;
 }
-
-/*.you-win {
-	width: 100%;
-	height: 100%;
-	background: #4f9652;
-	-webkit-transform-style: preserve-3d;
-    -webkit-perspective: 1000;
-}
-
-.you-win-input {
-	opacity: 1;
-}
-
-.you-win-input:checked ~ .you-win {
-	-webkit-animation: bg-color 10s infinite;
-}
-
-@-webkit-keyframes bg-color {
-
-	50% {background: #78d37b;}
-
-	100% {background: #4f9652;}
-}
-
-.you-win-heading {
-	font-size: 4em;
-	padding-top: 6.5em;
-	text-align: center;
-}
-
-.you-win-input:checked ~ .you-win .you-win-heading {
-	-webkit-animation: pop-out 1.5s 1;
-    -webkit-transform-style: preserve-3d;
-}
-
-@-webkit-keyframes pop-out {
-
-	50% {
-	    -webkit-transform: translate3d(0px,-15px,400px);
-	}
-
-	100% {
-	    -webkit-transform: translate3d(0px,0px,0px);
-	}
-}*/
