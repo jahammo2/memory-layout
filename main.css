@@ -1,0 +1,424 @@
+/*************************************************************
+*****BODY, RESET, AND GENERAL CSS*********
+*************************************************************/
+
+@import url('../css/reset.css');
+
+@font-face {
+  font-family: "my-icons";
+  src:url("../css/my-fonts/fonts/my-icons/my-icons.eot");
+  src:url("../css/my-fonts/fonts/my-icons/my-icons.eot") format("embedded-opentype"),
+    url("../css/my-fonts/fonts/my-icons/my-icons.woff") format("woff"),
+    url("../css/my-fonts/fonts/my-icons/my-icons.ttf") format("truetype"),
+    url("../css/my-fonts/fonts/my-icons/my-icons.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body,
+html {
+	height: 100%;
+	width: 100%;
+	color: white;
+}
+
+.after-div {
+	font-family: 'my-icons', 'Yanone Kaffeesatz', sans-serif;
+	background: #3B8B9E;
+	color: white;
+	height: 100%;
+	margin-top: -1.1em;
+	width: 100%;
+}
+
+label {
+	cursor: pointer;
+}
+
+main {
+	visibility: hidden;
+	width: 100%;
+}
+
+/*************************************************************
+***** HEADING *********
+*************************************************************/
+
+.heading {
+	display: -webkit-flex;
+	-webkit-flex-direction: row;
+	-webkit-justify-content: center;
+	-webkit-flex-wrap: wrap;
+	letter-spacing: .1em;
+/*	margin-top: 3em;*/
+	padding-top: 3em;
+
+}
+
+.heading p,
+.heading i {
+	font-size: 5em;
+}
+
+/*************************************************************
+***** HEARTS AND TIMER *********
+*************************************************************/
+
+.hearts-timer {
+	margin: 2em 2em 3em;
+	display: -webkit-flex;
+	-webkit-flex-direction: row;
+	-webkit-justify-content: space-between;
+	-webkit-flex-wrap: wrap;
+
+}
+
+.hearts {
+	display: -webkit-flex;
+	-webkit-flex-direction: row;
+	-webkit-justify-content: left;
+	-webkit-flex-wrap: wrap;
+
+}
+
+.hearts i {
+	padding: 0 .08em 0;
+}
+
+/*************************************************************
+***** MEMORY DIV *********
+*************************************************************/
+
+.memory {
+	width: 100%;
+	margin: 0 auto;
+	font-family: 'memory-game';
+}
+
+.piece {
+	background: #7884CD;
+	margin: 1em;
+	padding: 7%;
+	border-radius: 8%;
+	display: table-cell;
+	position: relative;
+}
+
+.memory ul {
+	list-style: none;
+	display: table;
+	padding: 1em;
+	width: 94%;
+	margin: 0 auto;
+	border-spacing: .15em;
+}
+
+.memory-header,
+.memory-row {
+	display: table-row;
+	width: 100%;
+}
+
+/*************************************************************
+***** INDIVIDUAL NAVS *********
+*************************************************************/
+
+.unclicked {
+	display: inline-block;
+	background: #7884CD;
+	position: absolute;
+	opacity: 0;
+	top: 25%;
+	left: 29%;
+	width: 0%;
+}
+
+.checkbox {
+	position: absolute;
+	width: 0;
+	opacity: 0;
+}
+
+.checkbox:checked ~ .unclicked {
+	opacity: 1;
+}
+
+section {
+	background: #7884CD;
+	border-radius: 8%;
+	z-index:1.5;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+/******************** INGAME TRANSITIONS *********************************/
+
+.piece {
+	background: #3F51B5;
+}
+
+.ingame-span {
+	opacity: 0;
+}
+
+.beginning-span {
+	opacity: 1;
+}
+
+.ingame-section {
+	background: transparent;
+	z-index: 3;
+}
+
+
+.other-checkbox:checked ~ .beginning-section {
+	opacity: 0;
+}
+
+
+.other-checkbox:checked ~ .ingame-section {
+	transition: -webkit-transform .3s;
+	transform: rotateY(-180deg);
+	background: #7884CD;
+}
+
+.other-checkbox:checked ~ .ingame-section .ingame-span {
+	opacity: 1;
+	-webkit-transition-delay: .2s;
+}
+
+/******************** HOME-PAGE TRANSITIONS *********************************/
+
+.transition-checkbox:checked ~ .after-div .ingame-section {
+	opacity: 1;
+}
+
+.transition-checkbox:checked ~ .after-div .beginning-section {
+	transition: -webkit-transform .3s;
+	-webkit-transform-style: preserve-3d;
+	transform: rotateY(-180deg);
+
+}
+
+
+.transition-checkbox:checked ~ .after-div .beginning-section-both {
+	position: absolute;
+	-webkit-backface-visibility: hidden;
+	   -moz-backface-visibility: hidden;
+	        backface-visibility: hidden;
+}
+
+.transition-checkbox:checked ~ .after-div {
+	background: #3F51B5;
+}
+
+.transition-checkbox:checked ~ .after-div main {
+	visibility: visible;
+}
+
+.transition-checkbox:checked ~.after-div .homepage {
+	visibility: hidden;
+}
+
+/******************** Media screens to resolve font issue *********************************/
+
+@media screen and (min-width:1000px) {
+
+.unclicked {
+	font-size: 450%;
+}
+
+}
+
+
+@media screen and (min-width:721px) and (max-width: 1000px) {
+
+.unclicked {
+	font-size: 350%;
+}
+
+}
+
+
+@media screen and (min-width:480px) and (max-width: 720px) {
+
+.unclicked {
+	font-size: 250%;
+}
+
+}
+
+
+@media screen and (max-width:479px) {
+
+.unclicked {
+	font-size: 150%;
+}
+
+}
+
+/*************************************************************
+*****BODY, RESET, AND GENERAL CSS*********
+*************************************************************/
+
+/*.wrapper {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}*/
+
+.homepage {
+	background: #3B8B9E;
+	min-width: 400px;
+	height: 400px;
+	top: 20%;
+	left: 30%;
+	position: absolute;
+	margin-bottom: 15em;
+	-webkit-animation: up-down 2s ease-in infinite;
+}
+
+@-webkit-keyframes up-down {
+	50% {-webkit-transform: rotate(-.7deg) translateY(-.5em);}
+}
+
+.bottom {
+	display: -webkit-flex;
+	-webkit-flex-direction: column;
+	-webkit-align-content: center;
+	-webkit-flex-wrap: wrap;
+}
+
+h1 {
+	font-size: 2.3em;
+	margin: .5em 0 0 3.8em;
+}
+
+/*************************************************************
+***** BUTTONS *********
+*************************************************************/
+
+.hard,
+.easy {
+	border-top:240px solid white;
+	border-left:20px solid transparent;
+	border-right:20px solid transparent;
+	height:0;
+	top: -35px;
+	left:25px;
+	width:40px;
+	position: relative;
+	z-index: 1;
+	display: block;
+}
+
+.hard:before,
+.easy:before {
+    border-top:230px solid #3B8B9E;
+    border-left:17px solid transparent;
+    border-right:17px solid transparent;
+    height:0;
+    width:30px;
+    position: absolute;
+    top: -234px;
+    left: -12px;
+    content: "";
+    z-index: .5;
+}
+
+.hard {
+	-webkit-transform: rotate(90deg);
+    margin: -1em 0 0 11.8em;
+}
+
+.easy {
+	-webkit-transform: rotate(-90deg);
+ 	margin: -9em 0 0 4em;
+}
+
+.hard-heading,
+.easy-heading {
+	position: absolute;
+}
+
+.hard-heading {
+	-webkit-transform: rotate(-90deg);
+	top: -4em;
+	left: .3em;
+}
+
+.easy-heading {
+	-webkit-transform: rotate(90deg);
+	top: -4.4em;
+	left: .7em;
+}
+
+input {
+	opacity: 0;
+}
+
+.top {
+	opacity: 1;
+}
+
+/*************************************************************
+***** YOU WIN! *********
+*************************************************************/
+
+.you-win {
+	width: 100%;
+	height: 100%;
+	-webkit-transform-style: preserve-3d;
+    -webkit-perspective: 1000;
+	visibility: hidden;
+}
+
+.you-win-input {
+	opacity: 1;
+}
+
+.you-win-input:checked ~ .after-div {
+	-webkit-animation: bg-color 10s infinite;
+	background: #4f9652;;
+}
+
+.you-win-input:checked ~ .after-div .you-win {
+	visibility: visible;
+}
+
+.you-win-input:checked ~ .after-div main {
+	visibility: hidden;
+}
+
+@-webkit-keyframes bg-color {
+
+	50% {background: #78d37b;}
+
+	100% {background: #4f9652;}
+}
+
+.you-win-heading {
+	font-size: 4em;
+	padding-top: 6.5em;
+	text-align: center;
+}
+
+.you-win-input:checked ~ .after-div .you-win-heading {
+	-webkit-animation: pop-out 1.5s 1;
+    -webkit-transform-style: preserve-3d;
+	visibility: visible;
+}
+
+@-webkit-keyframes pop-out {
+
+	50% {
+	    -webkit-transform: translate3d(0px,-15px,400px);
+	}
+
+	100% {
+	    -webkit-transform: translate3d(0px,0px,0px);
+	}
+}
