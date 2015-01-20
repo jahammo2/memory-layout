@@ -1,13 +1,6 @@
-.you-win-input:checked ~ .after-div .you-win {
-	visibility: hidden;
-	-webkit-transition-delay: 1.5s;
-}
-
-.you-win-input:checked ~ .after-div .score-contents {
-	margin-right: 50em;
-	visibility: visible;
-	-webkit-transition: all .4s 1.5s;
-}
+/*************************************************************
+***** FINAL PAGE *********
+*************************************************************/
 
 .score-contents {
 	height: 100%;
@@ -71,22 +64,11 @@
 	100% {background: #4f9652;}
 }
 
+/******************** TRIGGERS *********************************/
 
-
-
-
-
-
-
-.you-win-input {
-	position: absolute;
-	left: 50%;
-	top: 20%;
+.you-win-input:checked ~ .after-div .score-contents {
+	margin-right: 50em;
+	visibility: visible;
+	-webkit-transition: all .4s 1.5s;
 }
-
-
-
-
-
-
 
