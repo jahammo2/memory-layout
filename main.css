@@ -475,7 +475,7 @@ main {
 
 .score-screen-reset {
 	margin-left: 1em;
-	background: #4f9652;	
+	background: #4f9652;
 	-webkit-animation: bg-color 2s infinite;
 	width: 70%;
 	margin: 2em auto 2em;
@@ -490,8 +490,3 @@ main {
 	visibility: visible;
 	-webkit-transition: all .4s 1.5s;
 }
-
-
-
-
-
