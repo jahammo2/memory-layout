@@ -3,6 +3,13 @@
   <head>
     <meta charset="utf-8">
     <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>  
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+
+    <script src="js/flipclock.js"></script>
+    <script src="js/flipclock.min.js"></script>
+
     <link rel="stylesheet" href="css/my-fonts/css/font-awesome.min.css">
     <link href="https://fontastic.s3.amazonaws.com/5x58ZGWLnm72xjPgLThQ3V/icons.css" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
@@ -12,52 +19,54 @@
 
 
     <input class="top transition-checkbox" type="checkbox" name="some_name" value="">
-    <input class="first-three-pages-input you-win-input" type="checkbox" name="" value="">
+    <input class="win-lose-input you-win-input first-three-pages-input" type="checkbox" name="" value="">
+    <input class="win-lose-input you-lose-input first-three-pages-input" type="checkbox" name="" value="">
     <div class="after-div">
 
+    </div>
 
 
 
 
-        <div class="homepage">
+    <script type="fsadf" id="homepage">
 
-          <div class="heading">
+      <div class="homepage">
 
-            <p class="heading-mem">
-              Mem
-            </p>
-            <i class="fa fa-lightbulb-o"></i>
-            <p class="heading-ry">
-              ry
-            </p>
+        <div class="heading heading-homepage">
 
-          </div>
-
-
-
-
-
-          <div class="bottom">
-
-            <h1 class="bottom-title">NEW GAME</h1>
-
-            <label class="hard">
-              <h2 class="hard-heading">Hard</h2>
-              <input class="first-three-pages-input transition-checkbox" type="checkbox" name="some_name" value="">
-            </label>
-
-            <label class="easy">
-              <h2 class="easy-heading">Easy</h2>
-              <input class="first-three-pages-input transition-checkbox" type="checkbox" name="some_name" value="">
-            </label>
-
-          </div>
+          <p class="heading-mem">
+            Mem
+          </p>
+          <i class="fa fa-lightbulb-o"></i>
+          <p class="heading-ry">
+            ry
+          </p>
 
         </div>
 
 
 
 
+
+        <div class="bottom">
+
+          <h1 class="bottom-title">NEW GAME</h1>
+
+          <label class="hard">
+            <h2 class="hard-heading">Hard</h2>
+          </label>
+
+          <label class="easy">
+            <h2 class="easy-heading">Easy</h2>
+          </label>
+
+        </div>
+
+      </div>
+
+      </script>
+
+      <script type="fsadf" id="main">
 
       <main>
 
@@ -90,6 +99,11 @@
             <i class="fa fa-heart"></i>
             <i class="fa fa-heart"></i>
             <i class="fa fa-heart"></i>
+            <i class="fa fa-heart"></i>
+            <i class="fa fa-heart"></i>
+            <i class="fa fa-heart"></i>
+            <i class="fa fa-heart"></i>
+            <i class="fa fa-heart"></i>
           </div>
 
           <div class="timer">
@@ -106,9 +120,26 @@
 
           <ul>
 
-            <li class="memory-header">
+            <li class="memory-li memory-header">
 
-              <label class="piece-header piece piece-1">
+              <div class="piece-header piece piece-1">
+
+                <input class="checkbox first-three-pages-input other-checkbox" type="checkbox" name="piece-3" value="">
+                <section class="piece-section ingame-section">
+                  <span class="ingame-span unclicked">
+                    a
+                  </span>
+                </section>
+                <section class="piece-section beginning-section">
+                  <span class="beginning-span beginning-section-both unclicked">
+                    d
+                  </span>
+                  <span class="beginning-section-both unclicked">
+                  </span>
+                </section>
+              </div>
+
+              <div class="piece-header piece piece-2">
                 <input class="checkbox first-three-pages-input other-checkbox" type="checkbox" name="piece-3" value="">
                 <section class="piece-section ingame-section">
                   <span class="ingame-span unclicked">
@@ -122,9 +153,9 @@
                   <span class="beginning-section-both unclicked">
                   </span>
                 </section>
-              </label>
+              </div>
 
-              <label class="piece-header piece piece-2">
+              <div class="piece-header piece piece-3">
                 <input class="checkbox first-three-pages-input other-checkbox" type="checkbox" name="piece-3" value="">
                 <section class="piece-section ingame-section">
                   <span class="ingame-span unclicked">
@@ -138,9 +169,9 @@
                   <span class="beginning-section-both unclicked">
                   </span>
                 </section>
-              </label>
+              </div>
 
-              <label class="piece-header piece piece-3">
+              <div class="piece-header piece piece-4">
                 <input class="checkbox first-three-pages-input other-checkbox" type="checkbox" name="piece-3" value="">
                 <section class="piece-section ingame-section">
                   <span class="ingame-span unclicked">
@@ -154,9 +185,9 @@
                   <span class="beginning-section-both unclicked">
                   </span>
                 </section>
-              </label>
+              </div>
 
-              <label class="piece-header piece piece-4">
+              <div class="piece-header piece piece-5">
                 <input class="checkbox first-three-pages-input other-checkbox" type="checkbox" name="piece-3" value="">
                 <section class="piece-section ingame-section">
                   <span class="ingame-span unclicked">
@@ -170,9 +201,9 @@
                   <span class="beginning-section-both unclicked">
                   </span>
                 </section>
-              </label>
+              </div>
 
-              <label class="piece-header piece piece-5">
+              <div class="piece-header piece piece-6">
                 <input class="checkbox first-three-pages-input other-checkbox" type="checkbox" name="piece-3" value="">
                 <section class="piece-section ingame-section">
                   <span class="ingame-span unclicked">
@@ -186,23 +217,7 @@
                   <span class="beginning-section-both unclicked">
                   </span>
                 </section>
-              </label>
-
-              <label class="piece-header piece piece-6">
-                <input class="checkbox first-three-pages-input other-checkbox" type="checkbox" name="piece-3" value="">
-                <section class="piece-section ingame-section">
-                  <span class="ingame-span unclicked">
-                    b
-                  </span>
-                </section>
-                <section class="piece-section beginning-section">
-                  <span class="beginning-span beginning-section-both unclicked">
-                    d
-                  </span>
-                  <span class="beginning-section-both unclicked">
-                  </span>
-                </section>
-              </label>
+              </div>
 
             </li>
 
@@ -210,9 +225,9 @@
 
 
 
-            <li class="memory-row">
+            <li class="memory-li memory-row">
 
-              <label class="piece-row piece piece-7">
+              <div class="piece-row piece piece-7">
                 <input class="checkbox first-three-pages-input other-checkbox" type="checkbox" name="piece-3" value="">
                 <section class="piece-section ingame-section">
                   <span class="ingame-span unclicked">
@@ -226,9 +241,9 @@
                   <span class="beginning-section-both unclicked">
                   </span>
                 </section>
-              </label>
+              </div>
 
-              <label class="piece-row piece piece-8">
+              <div class="piece-row piece piece-8">
                 <input class="checkbox first-three-pages-input other-checkbox" type="checkbox" name="piece-3" value="">
                 <section class="piece-section ingame-section">
                   <span class="ingame-span unclicked">
@@ -242,9 +257,9 @@
                   <span class="beginning-section-both unclicked">
                   </span>
                 </section>
-              </label>
+              </div>
 
-              <label class="piece-row piece piece-9">
+              <div class="piece-row piece piece-9">
                 <input class="checkbox first-three-pages-input other-checkbox" type="checkbox" name="piece-3" value="">
                 <section class="piece-section ingame-section">
                   <span class="ingame-span unclicked">
@@ -258,9 +273,9 @@
                   <span class="beginning-section-both unclicked">
                   </span>
                 </section>
-              </label>
+              </div>
 
-              <label class="piece-row piece piece-10">
+              <div class="piece-row piece piece-10">
                 <input class="checkbox first-three-pages-input other-checkbox" type="checkbox" name="piece-3" value="">
                 <section class="piece-section ingame-section">
                   <span class="ingame-span unclicked">
@@ -274,9 +289,9 @@
                   <span class="beginning-section-both unclicked">
                   </span>
                 </section>
-              </label>
+              </div>
 
-              <label class="piece-row piece piece-11">
+              <div class="piece-row piece piece-11">
                 <input class="checkbox first-three-pages-input other-checkbox" type="checkbox" name="piece-3" value="">
                 <section class="piece-section ingame-section">
                   <span class="ingame-span unclicked">
@@ -290,9 +305,9 @@
                   <span class="beginning-section-both unclicked">
                   </span>
                 </section>
-              </label>
+              </div>
 
-              <label class="piece-row piece piece-12">
+              <div class="piece-row piece piece-12">
                 <input class="checkbox first-three-pages-input other-checkbox" type="checkbox" name="piece-3" value="">
                 <section class="piece-section ingame-section">
                   <span class="ingame-span unclicked">
@@ -306,7 +321,7 @@
                   <span class="beginning-section-both unclicked">
                   </span>
                 </section>
-              </label>
+              </div>
 
             </li>
 
@@ -314,9 +329,9 @@
 
 
 
-            <li class="memory-row">
+            <li class="memory-li memory-row">
 
-              <label class="piece-row piece piece-13">
+              <div class="piece-row piece piece-13">
                 <input class="checkbox first-three-pages-input other-checkbox" type="checkbox" name="piece-3" value="">
                 <section class="piece-section ingame-section">
                   <span class="ingame-span unclicked">
@@ -330,9 +345,9 @@
                   <span class="beginning-section-both unclicked">
                   </span>
                 </section>
-              </label>
+              </div>
 
-              <label class="piece-row piece piece-14">
+              <div class="piece-row piece piece-14">
                 <input class="checkbox first-three-pages-input other-checkbox" type="checkbox" name="piece-3" value="">
                 <section class="piece-section ingame-section">
                   <span class="ingame-span unclicked">
@@ -346,9 +361,9 @@
                   <span class="beginning-section-both unclicked">
                   </span>
                 </section>
-              </label>
+              </div>
 
-              <label class="piece-row piece piece-15">
+              <div class="piece-row piece piece-15">
                 <input class="checkbox first-three-pages-input other-checkbox" type="checkbox" name="piece-3" value="">
                 <section class="piece-section ingame-section">
                   <span class="ingame-span unclicked">
@@ -362,9 +377,9 @@
                   <span class="beginning-section-both unclicked">
                   </span>
                 </section>
-              </label>
+              </div>
 
-              <label class="piece-row piece piece-16">
+              <div class="piece-row piece piece-16">
                 <input class="checkbox first-three-pages-input other-checkbox" type="checkbox" name="piece-3" value="">
                 <section class="piece-section ingame-section">
                   <span class="ingame-span unclicked">
@@ -378,9 +393,9 @@
                   <span class="beginning-section-both unclicked">
                   </span>
                 </section>
-              </label>
+              </div>
 
-              <label class="piece-row piece piece-17">
+              <div class="piece-row piece piece-17">
                 <input class="checkbox first-three-pages-input other-checkbox" type="checkbox" name="piece-3" value="">
                 <section class="piece-section ingame-section">
                   <span class="ingame-span unclicked">
@@ -394,9 +409,9 @@
                   <span class="beginning-section-both unclicked">
                   </span>
                 </section>
-              </label>
+              </div>
 
-              <label class="piece-row piece piece-18">
+              <div class="piece-row piece piece-18">
                 <input class="checkbox first-three-pages-input other-checkbox" type="checkbox" name="piece-3" value="">
                 <section class="piece-section ingame-section">
                   <span class="ingame-span unclicked">
@@ -410,57 +425,167 @@
                   <span class="beginning-section-both unclicked">
                   </span>
                 </section>
-              </label>
+              </div>
+
+            </li>
+
+
+
+
+
+            <li class="memory-li memory-row hard-memory-row">
+
+              <div class="piece-row piece piece-19">
+                <input class="checkbox first-three-pages-input other-checkbox" type="checkbox" name="piece-3" value="">
+                <section class="piece-section ingame-section">
+                  <span class="ingame-span unclicked">
+                    b
+                  </span>
+                </section>
+                <section class="piece-section beginning-section">
+                  <span class="beginning-span beginning-section-both unclicked">
+                    d
+                  </span>
+                  <span class="beginning-section-both unclicked">
+                  </span>
+                </section>
+              </div>
+
+              <div class="piece-row piece piece-20">
+                <input class="checkbox first-three-pages-input other-checkbox" type="checkbox" name="piece-3" value="">
+                <section class="piece-section ingame-section">
+                  <span class="ingame-span unclicked">
+                    b
+                  </span>
+                </section>
+                <section class="piece-section beginning-section">
+                  <span class="beginning-span beginning-section-both unclicked">
+                    d
+                  </span>
+                  <span class="beginning-section-both unclicked">
+                  </span>
+                </section>
+              </div>
+
+              <div class="piece-row piece piece-21">
+                <input class="checkbox first-three-pages-input other-checkbox" type="checkbox" name="piece-3" value="">
+                <section class="piece-section ingame-section">
+                  <span class="ingame-span unclicked">
+                    b
+                  </span>
+                </section>
+                <section class="piece-section beginning-section">
+                  <span class="beginning-span beginning-section-both unclicked">
+                    d
+                  </span>
+                  <span class="beginning-section-both unclicked">
+                  </span>
+                </section>
+              </div>
+
+              <div class="piece-row piece piece-22">
+                <input class="checkbox first-three-pages-input other-checkbox" type="checkbox" name="piece-3" value="">
+                <section class="piece-section ingame-section">
+                  <span class="ingame-span unclicked">
+                    b
+                  </span>
+                </section>
+                <section class="piece-section beginning-section">
+                  <span class="beginning-span beginning-section-both unclicked">
+                    d
+                  </span>
+                  <span class="beginning-section-both unclicked">
+                  </span>
+                </section>
+              </div>
+
+              <div class="piece-row piece piece-23">
+                <input class="checkbox first-three-pages-input other-checkbox" type="checkbox" name="piece-3" value="">
+                <section class="piece-section ingame-section">
+                  <span class="ingame-span unclicked">
+                    b
+                  </span>
+                </section>
+                <section class="piece-section beginning-section">
+                  <span class="beginning-span beginning-section-both unclicked">
+                    d
+                  </span>
+                  <span class="beginning-section-both unclicked">
+                  </span>
+                </section>
+              </div>
+
+              <div class="piece-row piece piece-24">
+                <input class="checkbox first-three-pages-input other-checkbox" type="checkbox" name="piece-3" value="">
+                <section class="piece-section ingame-section">
+                  <span class="ingame-span unclicked">
+                    b
+                  </span>
+                </section>
+                <section class="piece-section beginning-section">
+                  <span class="beginning-span beginning-section-both unclicked">
+                    d
+                  </span>
+                  <span class="beginning-section-both unclicked">
+                  </span>
+                </section>
+              </div>
 
             </li>
 
           </ul>
 
+          <div class="win-lose you-lose">
+            <h3 class="win-lose-heading you-lose-heading">
+              YOU LOSE!
+            </h3>
+          </div>
+
         </div>
 
       </main>
 
+    </script>
 
+    <script type="fsadf" id="score-contents">
 
-
-
-      <div class="score-contents">
-      	<div class="score-screen">
-  	      <div class="heading">
-
-  	        <p class="heading-mem">
-  	          Mem
-  	        </p>
-  	        <i class="fa fa-lightbulb-o"></i>
-  	        <p class="heading-ry">
-  	          ry
-  	        </p>
-
-  	      </div>
-  	      <h3 class="score-screen-errors score-screen-movers score-screen-texts">Errors</h3>
-  	      <h2 class="score-screen-time score-screen-movers score-screen-texts">Time</h2>
-  	      <h1 class="score-screen-score score-screen-texts">Score</h1>
-  	      <label class="score-screen-reset score-screen-texts" for="">New Game
-  	      	<input class="first-three-pages-input score-screen-checkbox" type="checkbox">
-  	      </label>
-	      </div>
-      </div>
-
-
-
-
-
-      <div class="you-win">
-        <h3 class="you-win-heading">
+      <div class="win-lose you-win">
+        <h3 class="win-lose-heading you-win-heading">
           YOU WIN!
         </h3>
       </div>
 
+      <div class="score-contents">
+        <div class="score-screen">
+          <div class="heading">
+
+            <p class="heading-mem">
+              Mem
+            </p>
+            <i class="fa fa-lightbulb-o"></i>
+            <p class="heading-ry">
+              ry
+            </p>
+
+          </div>
+          <h3 class="score-screen-errors score-screen-movers score-screen-texts">Errors</h3>
+          <h2 class="score-screen-time score-screen-movers score-screen-texts">Time</h2>
+          <h1 class="score-screen-score score-screen-texts">Score</h1>
+          <label class="score-screen-reset score-screen-texts" for="">New Game
+            <input class="first-three-pages-input score-screen-checkbox" type="checkbox">
+          </label>
+        </div>
+      </div>
+
+    </script>
 
 
 
 
-    </div>
+    <script src="js/populate.js"></script>
+    <script src="js/gameplay.js"></script>
+    <script src="js/gameSetup.js"></script>
+    <script src="js/main.js"></script>
 
   </body>
 </html>
