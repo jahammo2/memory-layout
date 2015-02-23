@@ -4,17 +4,6 @@
 
 @import url('css/reset.css');
 
-@font-face {
-  font-family: "my-icons";
-  src:url("../css/my-fonts/fonts/my-icons/my-icons.eot");
-  src:url("../css/my-fonts/fonts/my-icons/my-icons.eot") format("embedded-opentype"),
-    url("../css/my-fonts/fonts/my-icons/my-icons.woff") format("woff"),
-    url("../css/my-fonts/fonts/my-icons/my-icons.ttf") format("truetype"),
-    url("../css/my-fonts/fonts/my-icons/my-icons.svg") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
 body,
 html {
 	height: 100%;
@@ -31,13 +20,16 @@ html {
 	width: 100%;
 }
 
-label {
+label,
+.piece {
 	cursor: pointer;
 }
 
 main {
 	visibility: hidden;
 	width: 100%;
+	max-width: 1000px;
+	margin: 0 auto;
 }
 
 /*************************************************************
@@ -45,14 +37,28 @@ main {
 *************************************************************/
 
 .heading {
+	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
 	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: center;
 	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
 	letter-spacing: .1em;
-/*	margin-top: 3em;*/
-	padding-top: 3em;
+	padding-top: 2em;
+}
 
+.heading-homepage {
+	padding-top: 10em;
 }
 
 .heading p,
@@ -65,19 +71,43 @@ main {
 *************************************************************/
 
 .hearts-timer {
-	margin: 2em 2em 3em;
+	margin: 2em 3% 3em;
+	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
 	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: justify;
 	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
 
 }
 
 .hearts {
+	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
 	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: left;
 	-webkit-justify-content: left;
+	    -ms-flex-pack: left;
+	        justify-content: left;
 	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
 
 }
 
@@ -107,14 +137,12 @@ main {
 .memory ul {
 	list-style: none;
 	display: table;
-	padding: 1em;
 	width: 94%;
 	margin: 0 auto;
 	border-spacing: .15em;
 }
 
-.memory-header,
-.memory-row {
+.memory-li {
 	display: table-row;
 	width: 100%;
 }
@@ -160,6 +188,17 @@ main {
 	background: #3F51B5;
 }
 
+.flipper {
+	background: red;
+	z-index: 100000;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0;
+}
+
 .ingame-span {
 	opacity: 0;
 }
@@ -180,14 +219,17 @@ main {
 
 
 .other-checkbox:checked ~ .ingame-section {
-	transition: -webkit-transform .3s;
-	transform: rotateY(-180deg);
+	-webkit-transition: -webkit-transform .3s;
+	        transition: transform .3s;
+	-webkit-transform: rotateY(-180deg);
+	        transform: rotateY(-180deg);
 	background: #7884CD;
 }
 
 .other-checkbox:checked ~ .ingame-section .ingame-span {
 	opacity: 1;
 	-webkit-transition-delay: .2s;
+	        transition-delay: .2s;
 }
 
 /******************** HOME-PAGE TRANSITIONS *********************************/
@@ -197,9 +239,12 @@ main {
 }
 
 .transition-checkbox:checked ~ .after-div .beginning-section {
-	transition: -webkit-transform .3s;
+	-webkit-transition: -webkit-transform .3s;
+	        transition: transform .3s;
 	-webkit-transform-style: preserve-3d;
-	transform: rotateY(-180deg);
+	        transform-style: preserve-3d;
+	-webkit-transform: rotateY(-180deg);
+	        transform: rotateY(-180deg);
 
 }
 
@@ -207,8 +252,9 @@ main {
 .transition-checkbox:checked ~ .after-div .beginning-section-both {
 	position: absolute;
 	-webkit-backface-visibility: hidden;
-	   -moz-backface-visibility: hidden;
 	        backface-visibility: hidden;
+	   -webkit-backface-visibility: hidden;
+	           backface-visibility: hidden;
 }
 
 .transition-checkbox:checked ~ .after-div {
@@ -220,15 +266,26 @@ main {
 }
 
 .transition-checkbox:checked ~.after-div .homepage {
-	visibility: hidden;
+	display:none;
 }
 
-/******************** Media screens to resolve font issue *********************************/
+/******************** Media screens to resolve font/score issue *********************************/
 
 @media screen and (min-width:1000px) {
 
 .unclicked {
 	font-size: 450%;
+}
+
+.win-lose-input:checked ~ .after-div .score-contents {
+	margin-right: 67%;
+	visibility: visible;
+	-webkit-transition: all .4s 1.5s;
+	        transition: all .4s 1.5s;
+}
+
+.you-lose {
+	left: 0%;
 }
 
 }
@@ -240,6 +297,13 @@ main {
 	font-size: 350%;
 }
 
+.win-lose-input:checked ~ .after-div .score-contents {
+	margin-right: 52%;
+	visibility: visible;
+	-webkit-transition: all .4s 1.5s;
+	        transition: all .4s 1.5s;
+}
+
 }
 
 
@@ -247,6 +311,13 @@ main {
 
 .unclicked {
 	font-size: 250%;
+}
+
+.win-lose-input:checked ~ .after-div .score-contents {
+	margin-right: 34%;
+	visibility: visible;
+	-webkit-transition: all .4s 1.5s;
+	        transition: all .4s 1.5s;
 }
 
 }
@@ -258,38 +329,53 @@ main {
 	font-size: 150%;
 }
 
+.win-lose-input:checked ~ .after-div .score-contents {
+	margin-right: 25%;
+	visibility: visible;
+	-webkit-transition: all .4s 1.5s;
+	        transition: all .4s 1.5s;
+}
+
 }
 
 /*************************************************************
 ***** HOMEPAGE *********
 *************************************************************/
 
-/*.wrapper {
-	position: absolute;
-	height: 100%;
-	width: 100%;
-}*/
-
 .homepage {
 	background: #3B8B9E;
-	min-width: 400px;
+	width: 400px;
 	height: 400px;
-	top: 20%;
-	left: 30%;
-	position: absolute;
-	margin-bottom: 15em;
+	margin: 0 auto;
 	-webkit-animation: up-down 2s ease-in infinite;
+	        animation: up-down 2s ease-in infinite;
 }
 
 @-webkit-keyframes up-down {
-	50% {-webkit-transform: rotate(-.7deg) translateY(-.5em);}
+	50% {-webkit-transform: rotate(-.7deg) translateY(-.5em);transform: rotate(-.7deg) translateY(-.5em);}
+}
+
+@keyframes up-down {
+	50% {-webkit-transform: rotate(-.7deg) translateY(-.5em);transform: rotate(-.7deg) translateY(-.5em);}
 }
 
 .bottom {
+	margin: 0 auto;
+	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
 	-webkit-align-content: center;
+	    -ms-flex-line-pack: center;
+	        align-content: center;
 	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
 }
 
 .bottom-title {
@@ -331,11 +417,15 @@ main {
 
 .hard {
 	-webkit-transform: rotate(90deg);
+	    -ms-transform: rotate(90deg);
+	        transform: rotate(90deg);
     margin: -1em 0 0 11.8em;
 }
 
 .easy {
 	-webkit-transform: rotate(-90deg);
+	    -ms-transform: rotate(-90deg);
+	        transform: rotate(-90deg);
  	margin: -9em 0 0 4em;
 }
 
@@ -346,12 +436,16 @@ main {
 
 .hard-heading {
 	-webkit-transform: rotate(-90deg);
+	    -ms-transform: rotate(-90deg);
+	        transform: rotate(-90deg);
 	top: -4em;
 	left: .48em;
 }
 
 .easy-heading {
 	-webkit-transform: rotate(90deg);
+	    -ms-transform: rotate(90deg);
+	        transform: rotate(90deg);
 	top: -4.4em;
 	left: .7em;
 }
@@ -360,33 +454,58 @@ main {
 	opacity: 0;
 }
 
+.win-lose-input {
+	visibility: hidden;
+}
+
 .top {
-	opacity: 1;
+	visibility: hidden;
 }
 
 /*************************************************************
-***** YOU WIN! *********
+***** YOU WIN/LOSE! *********
 *************************************************************/
 
 .you-win {
 	width: 100%;
 	height: 100%;
 	-webkit-transform-style: preserve-3d;
+	        transform-style: preserve-3d;
     -webkit-perspective: 1000;
-	visibility: hidden;
+            perspective: 1000;
 }
 
-.you-win-input {
-	opacity: 1;
+.you-win-heading {
+	font-size: 4em;
+	padding-top: 6.5em;
+	text-align: center;
+}
+
+.you-lose {
+	position: absolute;
+	top: 41%;
+	width: 100%;
+	background: transparent;
+	visibility: hidden;
+	z-index: 100000000;
+	-webkit-transform-style: preserve-3d;
+	        transform-style: preserve-3d;
+    -webkit-perspective: 1000;
+            perspective: 1000;
+}
+
+.you-lose-heading {
+	margin: 0 auto;
+	text-align: center;
+	color: white;
+	font-size: 4em;
+	text-stroke: 1px #3F51B5;
 }
 
 .you-win-input:checked ~ .after-div {
 	-webkit-animation: bg-color 10s infinite;
-	background: #4f9652;;
-}
-
-.you-win-input:checked ~ .after-div main {
-	display: none;
+	        animation: bg-color 10s infinite;
+	background: #4f9652;
 }
 
 @-webkit-keyframes bg-color {
@@ -396,15 +515,22 @@ main {
 	100% {background: #4f9652;}
 }
 
-.you-win-heading {
-	font-size: 4em;
-	padding-top: 6.5em;
-	text-align: center;
+@keyframes bg-color {
+
+	50% {background: #78d37b;}
+
+	100% {background: #4f9652;}
 }
 
-.you-win-input:checked ~ .after-div .you-win-heading {
+.win-lose-input:checked ~ .after-div .you-lose {
+	visibility: visible;
+}
+
+.win-lose-input:checked ~ .after-div .win-lose-heading {
 	-webkit-animation: pop-out 1.5s;
+	        animation: pop-out 1.5s;
     -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
 	visibility: visible;
 }
 
@@ -412,16 +538,32 @@ main {
 
 	50% {
 	    -webkit-transform: translate3d(0px,-15px,400px);
+	            transform: translate3d(0px,-15px,400px);
 	}
 
 	100% {
 	    -webkit-transform: translate3d(0px,0px,0px);
+	            transform: translate3d(0px,0px,0px);
 	}
 }
 
-.you-win-input:checked ~ .after-div .you-win {
+@keyframes pop-out {
+
+	50% {
+	    -webkit-transform: translate3d(0px,-15px,400px);
+	            transform: translate3d(0px,-15px,400px);
+	}
+
+	100% {
+	    -webkit-transform: translate3d(0px,0px,0px);
+	            transform: translate3d(0px,0px,0px);
+	}
+}
+
+.win-lose-input:checked ~ .after-div .win-lose {
 	opacity: 0;
 	-webkit-transition-delay: 1.5s;
+	        transition-delay: 1.5s;
 }
 
 /*************************************************************
@@ -435,7 +577,10 @@ main {
 	position: absolute;
 	z-index: 10;
 	-webkit-transform: skew(20deg);
-	right: -5em;
+	    -ms-transform: skew(20deg);
+	        transform: skew(20deg);
+	top: 0;
+	right: -40px;
 	visibility: hidden;
 	color: #4AAB4E;
 }
@@ -443,10 +588,21 @@ main {
 .score-screen {
 	height: 70%;
 	top: 20%;
+	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
 	-webkit-justify-content: space-around;
+	    -ms-flex-pack: distribute;
+	        justify-content: space-around;
 	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
 }
 
 .score-screen-texts {
@@ -476,22 +632,15 @@ main {
 .score-screen-reset {
 	margin-left: 1em;
 	background: #4f9652;	
-	-webkit-animation: bg-color 2s infinite;
+	-webkit-animation: bg-color 2s infinite;	
+	        animation: bg-color 2s infinite;
 	width: 70%;
 	margin: 2em auto 2em;
 	padding: .5em 0;
 	color: white;
+	cursor: pointer;
+	z-index: 100000000000000;
 }
-
-/******************** TRIGGERS *********************************/
-
-.you-win-input:checked ~ .after-div .score-contents {
-	margin-right: 50em;
-	visibility: visible;
-	-webkit-transition: all .4s 1.5s;
-}
-
-
 
 
 
