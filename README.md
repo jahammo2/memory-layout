@@ -14,10 +14,10 @@ https://github.com/tiy-durham-fe-2015/curriculum/blob/master/lectures/week6/4-th
 
 #### Technologies Used:
 
--JavaScript
--JQuery
--HTML
--CSS
+- JavaScript
+- JQuery
+- HTML
+- CSS
 
 #### Where I got:
 
