@@ -1,7 +1,8 @@
 # transition-help
 
-Assignment:
+Assignment for week 1-2:
 Implement the memory game layout detailed here: http://chrisdavies.github.io/memory/
+
 
 Only using css
 
