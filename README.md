@@ -3,8 +3,10 @@
 Assignment for week 1-2:
 Implement the memory game layout detailed here: http://chrisdavies.github.io/memory/
 
+#### Technologies Used:
 
-Only using css
+- HTML
+- CSS
 
 ## Take Two:
 
